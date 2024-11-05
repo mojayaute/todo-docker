@@ -1,0 +1,23 @@
+{
+  "development": {
+    "username": "root",
+    "password": "rootpassword",
+    "database": "density",
+    "host": "db",  
+    "dialect": "mysql"
+  },
+  "test": {
+    "username": "root",
+    "password": "rootpassword",
+    "database": "density",
+    "host": "db",  
+    "dialect": "mysql"
+  },
+  "production": {
+    "username": "root",
+    "password": "rootpassword",
+    "database": "density",
+    "host": "db",  
+    "dialect": "mysql"
+  }
+}

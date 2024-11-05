@@ -1,0 +1,79 @@
+.app {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  background-color: #f4f4f9;
+  padding: 20px;
+  max-width: 500px;
+  margin: 50px auto;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.header {
+  margin-bottom: 20px;
+}
+
+.input-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.input-container input {
+  width: 70%;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  outline: none;
+}
+
+.input-container button {
+  padding: 10px 15px;
+  font-size: 16px;
+  margin-left: 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: #28a745;
+  color: white;
+  cursor: pointer;
+}
+
+.input-container button:hover {
+  background-color: #218838;
+}
+
+.task-list {
+  list-style: none;
+  padding: 0;
+}
+
+.task {
+  background-color: white;
+  padding: 15px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+}
+
+.task.completed {
+  text-decoration: line-through;
+  color: #888;
+}
+
+.task button {
+  background-color: #dc3545;
+  border: none;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.task button:hover {
+  background-color: #c82333;
+}

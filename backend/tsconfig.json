@@ -1,0 +1,18 @@
+// ts.config
+{
+  "compilerOptions": {
+    "sourceMap": true,
+    "outDir": "dist",
+    "lib": [
+      "esnext"
+    ],
+    "esModuleInterop": true,
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "target": "ES6",
+    "module": "CommonJS",
+    "strict": true,
+    "moduleResolution": "Node",
+    "resolveJsonModule": true
+  }
+}

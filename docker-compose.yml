@@ -1,0 +1,54 @@
+services:
+  backend:
+    build:
+      context: ./backend
+    command: sh -c "npx sequelize-cli db:migrate && npm start"
+    ports:
+      - "3001:8000"
+    environment:
+      MYSQL_HOST: db
+      MYSQL_USER: root
+      MYSQL_PASSWORD: rootpassword  
+      MYSQL_DATABASE: density       
+    depends_on:
+      db:
+        condition: service_healthy  
+    volumes:
+      - ./backend:/app
+      - /app/node_modules  
+    networks:
+      - my_network  
+
+  frontend:
+    build:
+      context: ./frontend
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./frontend:/app
+      - /app/node_modules
+    networks:
+      - my_network  
+
+  db:
+    image: mysql:latest
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpassword  
+      MYSQL_DATABASE: density             
+    volumes:
+      - db_data:/var/lib/mysql
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-u", "root", "--password=rootpassword"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    networks:
+      - my_network  
+
+volumes:
+  db_data:
+
+networks:
+  my_network:  
